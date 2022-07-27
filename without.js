@@ -19,17 +19,22 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 const compare = function (item, array) {
-  for (let i = 0; i < source.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     let inArray = false;
     if (item === array[i]){
-      !inArray;
+      inArray = !inArray;
     }
     return inArray;
   }
 };
+
+
 const without = function(source, itemsToRemove) {
   let newArray = [];
   for (let i = 0; i < source.length; i++) {
-    
+    if(!compare(source[i], itemsToRemove)) {
+      newArray.push(source[i]);
+    }
   }
+  return newArray;
 };
