@@ -2,7 +2,7 @@
 
 let eqArrays = function(array1, array2) {
   let comparison = true;
-  if (array1.length !== array2.length ) {
+  if (array1.length !== array2.length) {
     comparison = false;
   }
   for (let i = 0; i < array1.length; i++) {
@@ -26,13 +26,13 @@ const assertArraysEqual = function(array1, array2) {
 
 // FUNCTION IMPLEMENTATION
 
-const isEven = function (array) {
+const isEven = function(array) {
   if (array.length % 2 === 0) {
     return true;
   } else {
     return false;
   }
- };
+};
 let middle = function(array) {
   let result = [];
   let midPointIndex = Math.floor(array.length / 2);
@@ -42,9 +42,9 @@ let middle = function(array) {
     if (isEven(array)) {
       result.push(earlyMidPoint, lateMidPoint);
     } else {
-      result.push(lateMidPoint)
-    } 
-  };
+      result.push(lateMidPoint);
+    }
+  }
   return result;
 };
 

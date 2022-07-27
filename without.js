@@ -1,6 +1,6 @@
 let eqArrays = function(array1, array2) {
   let comparison = true;
-  if (array1.length !== array2.length ) {
+  if (array1.length !== array2.length) {
     comparison = false;
   }
   for (let i = 0; i < array1.length; i++) {
@@ -21,10 +21,10 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
-const compare = function (item, array) {
+const compare = function(item, array) {
   for (let i = 0; i < array.length; i++) {
     let inArray = false;
-    if (item === array[i]){
+    if (item === array[i]) {
       inArray = true;
     }
     return inArray;
@@ -35,7 +35,7 @@ const compare = function (item, array) {
 const without = function(source, itemsToRemove) {
   let newArray = [];
   for (let i = 0; i < source.length; i++) {
-    if(!compare(source[i], itemsToRemove)) {
+    if (!compare(source[i], itemsToRemove)) {
       newArray.push(source[i]);
     }
   }
