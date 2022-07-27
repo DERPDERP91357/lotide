@@ -36,13 +36,13 @@ const isEven = function (array) {
 let middle = function(array) {
   let result = [];
   let midPointIndex = Math.floor(array.length / 2);
-  let earlyMidPoint = array[midPointIndex];
-  let lateMidPoint = array[earlyMidPoint + 1];
+  let lateMidPoint = array[midPointIndex];
+  let earlyMidPoint = array[midPointIndex - 1];
   if (array.length > 2) {
     if (isEven(array)) {
       result.push(earlyMidPoint, lateMidPoint);
     } else {
-      result.push(earlyMidPoint)
+      result.push(lateMidPoint)
     } 
   };
   return result;
@@ -56,4 +56,4 @@ assertArraysEqual(middle([1, 2]), []);
 assertArraysEqual(middle([1, 2, 3]), [2]);
 assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle(1, 2, 3, 4, 5, 6), [3, 4]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
