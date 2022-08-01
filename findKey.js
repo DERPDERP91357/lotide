@@ -7,8 +7,8 @@ const assertEqual = function(actual, expected) {
 };
 
 
-const findKey = function (object, function1) {
-  let x = ""
+const findKey = function(object, function1) {
+  let x = "";
   for (let key in object) {
     if (function1(object[key])) {
       x = key;
@@ -20,7 +20,7 @@ const findKey = function (object, function1) {
   } else {
     return x;
   }
-}
+};
 
 
 

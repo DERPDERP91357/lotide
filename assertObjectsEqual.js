@@ -29,14 +29,14 @@ const eqObjects = function(object1, object2) {
     return equality = false;
   }
   for (let i = 0; i < a.length; i++) {
-    if(Array.isArray(object1[a[i]]) && Array.isArray(object2[a[i]])) {
-      console.log ("yes");
+    if (Array.isArray(object1[a[i]]) && Array.isArray(object2[a[i]])) {
+      console.log("yes");
       equality = eqArrays(object1[a[i]], object2[a[i]]);
-      return equality; 
+      return equality;
     } else {
       if (object1[a[i]] !== object2[a[i]]) {
         return equality = false;
-      };
+      }
     }
   }
   return equality;
@@ -47,7 +47,7 @@ const eqObjects = function(object1, object2) {
 // New Function
 
 const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect; 
+  const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
     console.log(`✅✅✅Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   } else {
