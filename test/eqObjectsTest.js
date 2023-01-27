@@ -24,4 +24,13 @@ describe("eqObjects", ()=> {
   it("returns false for objects with different number of nested keys", () => {
     assert.isFalse(eqObjects(cd, cd2), false);
   });
+  it("returns true for objects with different number of nested keys", () => {
+    assert.isTrue(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }));
+  });
+  it("returns false for objects with different number of nested keys", () => {
+    assert.isFalse(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+  });
+  it("returns false for objects with different number of nested keys", () => {
+    assert.isFalse(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+  });
 });
