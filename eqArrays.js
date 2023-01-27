@@ -1,17 +1,22 @@
+let eqObjects = require("./eqObjects");
+
 let eqArrays = function(array1, array2) {
-  let comparison = true;
   if (!array1 || !array2) {
     return false
   }
   if (array1.length !== array2.length) {
-    comparison = false;
+    return false;
   }
   for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      comparison = false;
+    if (typeof array1[i] === "string" && array1[i] !== array2[i]) {
+      return false;
+    } else if (Array.isArray(array1[i])) {
+      return eqArrays(array1[i], array2[i])
+    } else if (!Array.isArray(array1[i]) && typeof array1[i] === "object") {
+      return eqObjects(array1[i], array2[i])
     }
   }
-  return comparison;
+  return true;
 };
 
 module.exports = eqArrays;
